@@ -17,7 +17,7 @@ public class TitleScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1260, 710, 1);
-        StartButton startButton = new StartButton("Start", 200, 200);
+        StartButton startButton = new StartButton(Button.changeSize(new GreenfootImage("images//background_images//Picture1.png"),200,100), 200, 200);
         addObject(startButton, startButton.getX(), startButton.getY());
         
     }

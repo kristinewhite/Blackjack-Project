@@ -39,6 +39,7 @@ public class Button extends Actor
      * @param y   The y coordinate of the button
      */
     public Button(GreenfootImage picture, int x, int y){
+        picture.scale(200,100);
         this.message = picture;
         setImage(this.message);
         this.x = x;
@@ -76,6 +77,11 @@ public class Button extends Actor
     
     public void changeY(int y){
         this.y = y;
+    }
+    
+    public static GreenfootImage changeSize(GreenfootImage img, int x, int y){
+        img.scale(x,y);
+        return img;
     }
     
     public void act(){
