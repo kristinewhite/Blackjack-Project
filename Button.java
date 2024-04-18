@@ -38,9 +38,9 @@ public class Button extends Actor
      * @param x   The x coordinate of the button
      * @param y   The y coordinate of the button
      */
-    public Button(GreenfootImage picture, int x, int y){
-        picture.scale(200,100);
-        this.message = picture;
+    public Button(GreenfootImage img, int x, int y){
+        img.scale(200,100);
+        this.message = img;
         setImage(this.message);
         this.x = x;
         this.y = y;
@@ -71,22 +71,37 @@ public class Button extends Actor
         return y;
     }
     
-    public void changeX(int x){
+    public void setX(int x){
         this. x = x;
     }
     
-    public void changeY(int y){
+    public void setY(int y){
         this.y = y;
     }
     
-    public static GreenfootImage changeSize(GreenfootImage img, int x, int y){
+    public GreenfootImage scale(GreenfootImage img, int x, int y){
         img.scale(x,y);
         return img;
     }
     
     public void act(){
+
+    }
+    
+    public void animate(String btnType){
+        if(Greenfoot.mousePressed(this)){
+            setImage(scale(new GreenfootImage("images//"+btnType+"1.png"),200,100));
+            Greenfoot.delay(20);
+        } 
         if(Greenfoot.mouseClicked(this)){
-            System.out.println("100");
+            setImage(scale(new GreenfootImage("images//"+btnType+"2.png"),210,110));
+            Greenfoot.delay(10);
+            if (this instanceof Start){ Greenfoot.setWorld( new BlackJackRunner()); }
+        }
+        if(Greenfoot.mouseMoved(this)){
+            setImage(scale(new GreenfootImage("images//"+btnType+"2.png"),210,110));
+        } else if(Greenfoot.mouseMoved(null) && !Greenfoot.mouseMoved(this)){
+            setImage(scale(new GreenfootImage("images//"+btnType+"3.png"),200,100));
         }
     }
 }

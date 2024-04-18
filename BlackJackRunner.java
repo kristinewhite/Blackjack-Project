@@ -20,9 +20,10 @@ public class BlackJackRunner extends World
         GreenfootImage background = new GreenfootImage("images//background_images//bg_image.png");
         background.scale(1260, 710);
         this.setBackground(background);
-        Button example = new Button("Hey lol", 250, 200);
-        addObject(example, example.getX(), example.getY());
-        
+        Hit hitButton = new Hit(new GreenfootImage("images//hit3.png"),630,600);
+        addObject(hitButton, hitButton.getX(), hitButton.getY());
+        Stand standButton = new Stand(new GreenfootImage("images//stand3.png"),900,600);
+        addObject(standButton, standButton.getX(), standButton.getY());
     }
     
     /**
@@ -32,11 +33,11 @@ public class BlackJackRunner extends World
      * @param x  An integer that represents the Actor's x coordinate
      * @param y  An integer that represents the Actor's y coordinate
      */
-    @Override
+    /*@Override
     public void addObject(Actor object, int x, int y){
         super.addObject(object, x, y);
         object.setLocation(x, y);
-    }
+    }*/
 }
 /*
 * Used in BlackJackRunner Constructor

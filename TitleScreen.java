@@ -17,9 +17,9 @@ public class TitleScreen extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1260, 710, 1);
-        StartButton startButton = new StartButton(Button.changeSize(new GreenfootImage("images//background_images//Picture1.png"),200,100), 200, 200);
+        //Start startButton = new Start(Button.changeSize(new GreenfootImage("images//start3.png"),200,100),630,600);
+        Start startButton = new Start(new GreenfootImage("images//start3.png"),630,600);
         addObject(startButton, startButton.getX(), startButton.getY());
-        
     }
     
     /**
@@ -29,11 +29,11 @@ public class TitleScreen extends World
      * @param x  An integer that represents the Actor's x coordinate
      * @param y  An integer that represents the Actor's y coordinate
      */
-    @Override
+    /*@Override
     public void addObject(Actor object, int x, int y){
         super.addObject(object, x, y);
         object.setLocation(x, y);
-    }
+    }*/
 }
 /*
  * Or, just instantiate the world class which you want to be the first world interactively,
